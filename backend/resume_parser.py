@@ -50,7 +50,8 @@ SKILL_TAXONOMY = {
     ],
 }
 
-FLAT_SKILLS = {skill: category for cat, skills in SKILL_TAXONOMY.items() for skill in skills}
+##FLAT_SKILLS = {skill: category for cat, skills in SKILL_TAXONOMY.items() for skill in skills}
+FLAT_SKILLS = {skill: cat for cat, skills in SKILL_TAXONOMY.items() for skill in skills}
 
 DEGREE_PATTERNS = [
     r"\b(b\.?tech|b\.?e\.?|bachelor[s]? of (technology|engineering|science|arts|commerce))\b",
