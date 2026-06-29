@@ -28,6 +28,19 @@ app = FastAPI(
     version="1.0.0",
 )
 
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+import os
+
+# Serve React frontend
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+if os.path.exists(static_dir):
+    app.mount("/assets", StaticFiles(directory=f"{static_dir}/assets"), name="assets")
+
+    @app.get("/")
+    def serve_root():
+        return FileResponse(f"{static_dir}/index.html")
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],      # tighten in production to your frontend domain
