@@ -2,6 +2,9 @@
 
 A full-stack web application wrapping the AI Resume Analyzer backend with a React frontend.
 
+[![Deploy on Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Spaces-yellow)](https://huggingface.co/spaces/rishi1878/ai-resume-analyzer)
+
+A full-stack AI-powered resume parser and job matcher built with React, FastAPI, and SpaCy.
 ## Project Structure
 
 ```
